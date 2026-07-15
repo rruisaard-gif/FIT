@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Wireframe – Behandelpagina Template</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; margin: 0; color: #333; background: #fff; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .placeholder { background: #eee; border: 1px dashed #999; display: flex; align-items: center; justify-content: center; color: #777; font-size: 13px; }
+
+  /* Header */
+  header { border-bottom: 1px solid #ddd; padding: 16px 0; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-weight: bold; }
+  nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+  .btn { background: #ccc; border: none; padding: 10px 18px; border-radius: 4px; }
+  .rating-badge { font-size: 12px; }
+
+  /* Hero */
+  .hero { position: relative; }
+  .hero-bg { height: 380px; }
+  .hero-content { padding: 30px 0; }
+  .breadcrumb { font-size: 12px; color: #888; margin-bottom: 10px; }
+  .hero h1 { font-size: 32px; margin: 10px 0; }
+  .hero ul { margin: 10px 0 20px; padding-left: 18px; }
+  .hero-sub { font-size: 12px; color: #888; margin-top: 8px; }
+
+  .expert-card { display: flex; gap: 12px; align-items: center; border: 1px solid #ddd; padding: 12px; border-radius: 8px; margin-top: 20px; max-width: 320px; }
+  .expert-card .placeholder { width: 50px; height: 50px; border-radius: 50%; flex-shrink: 0; }
+
+  /* Content sections */
+  .content-section { display: flex; gap: 40px; align-items: center; padding: 60px 0; }
+  .content-section.reverse { flex-direction: row-reverse; }
+  .content-section .placeholder { flex: 1; height: 260px; }
+  .content-text { flex: 1; }
+  .content-text h2 { font-size: 24px; margin-bottom: 8px; }
+  .content-text h3 { font-size: 15px; font-weight: normal; color: #666; margin-bottom: 16px; }
+  .content-text p { font-size: 14px; line-height: 1.6; color: #555; }
+
+  /* Quote block */
+  .quote-block { text-align: center; padding: 50px 40px; font-size: 20px; font-style: italic; color: #444; max-width: 700px; margin: 0 auto; }
+
+  /* Insurance section */
+  .insurance-section { background: #f7f7f7; padding: 60px 0; text-align: center; }
+  .insurance-section h2 { font-size: 22px; }
+  .logo-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; margin: 30px 0; }
+  .logo-grid .placeholder { height: 50px; }
+
+  /* Company overview box */
+  .overview-box { border: 1px solid #ddd; border-radius: 8px; padding: 40px; margin: 60px 0; }
+  .overview-box h2 { font-size: 22px; margin-bottom: 12px; }
+  .overview-box p { font-size: 14px; line-height: 1.6; color: #555; }
+
+  /* Practitioners */
+  .practitioners { padding: 60px 0; text-align: center; }
+  .practitioners h2 { font-size: 22px; }
+  .practitioners h3 { font-size: 14px; font-weight: normal; color: #666; margin-bottom: 30px; }
+  .practitioner-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .practitioner-card .placeholder { height: 160px; margin-bottom: 10px; }
+  .practitioner-card p { font-size: 13px; margin: 2px 0; }
+  .practitioner-card .name { font-weight: bold; }
+
+  /* Footer */
+  footer { background: #222; color: #ccc; padding: 50px 0 20px; font-size: 13px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+  footer h4 { color: #fff; margin-bottom: 10px; }
+  footer ul { list-style: none; padding: 0; margin: 0; }
+  footer li { margin-bottom: 6px; }
+  .social-icons { display: flex; gap: 10px; margin-top: 10px; }
+  .social-icons .placeholder { width: 28px; height: 28px; border-radius: 50%; }
+  .copyright { border-top: 1px solid #444; padding-top: 15px; font-size: 11px; color: #888; }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">[Logo]</div>
+      <nav>
+        <ul>
+          <li>Klachten</li>
+          <li>Behandelingen</li>
+          <li>Over ons</li>
+          <li>Locaties</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span class="rating-badge">[Rating badge – bv. "9,2 / 694 reviews"]</span>
+        <button class="btn">[CTA: Afspraak maken]</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="placeholder hero-bg">[Hero achtergrondafbeelding]</div>
+    <div class="container hero-content">
+      <div class="breadcrumb">Home &gt; Behandelingen &gt; [Behandelnaam]</div>
+      <h1>[Titel behandeling] bij [Praktijknaam]</h1>
+      <ul>
+        <li>[USP 1]</li>
+        <li>[USP 2]</li>
+        <li>[USP 3]</li>
+      </ul>
+      <button class="btn">[CTA: Afspraak maken]</button>
+      <div class="hero-sub">[Belofte, bv. "Binnen 24 uur reactie"]</div>
+
+      <div class="expert-card">
+        <div class="placeholder">[Foto]</div>
+        <div>
+          <strong>[Vraag-kopje]</strong>
+          <p style="margin:4px 0; font-size:13px;">[Subtekst] – [Contactoptie / WhatsApp]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- Content section 1 -->
+    <div class="content-section">
+      <div class="placeholder">[Afbeelding sectie 1]</div>
+      <div class="content-text">
+        <h2>[Kop sectie 1]</h2>
+        <h3>[Subkop sectie 1]</h3>
+        <p>[Body tekst – uitleg over de dienst/methode]</p>
+      </div>
+    </div>
+
+    <!-- Quote 1 -->
+    <div class="quote-block">"[Uitgelichte quote / statement 1]"</div>
+
+    <!-- Content section 2 (image right) -->
+    <div class="content-section reverse">
+      <div class="placeholder">[Afbeelding sectie 2]</div>
+      <div class="content-text">
+        <h2>[Kop sectie 2]</h2>
+        <p>[Body tekst sectie 2]</p>
+      </div>
+    </div>
+
+    <!-- Content section 3 -->
+    <div class="content-section">
+      <div class="placeholder">[Afbeelding sectie 3]</div>
+      <div class="content-text">
+        <h2>[Kop sectie 3]</h2>
+        <p>[Body tekst sectie 3]</p>
+      </div>
+    </div>
+
+    <!-- Quote 2 -->
+    <div class="quote-block">"[Uitgelichte quote / statement 2]"</div>
+
+    <!-- Content section 4 -->
+    <div class="content-section reverse">
+      <div class="placeholder">[Afbeelding sectie 4]</div>
+      <div class="content-text">
+        <h2>[Kop sectie 4]</h2>
+        <p>[Body tekst sectie 4]</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Insurance / trust logos -->
+  <section class="insurance-section">
+    <div class="container">
+      <h2>[Kop: Aangesloten bij alle zorgverzekeraars]</h2>
+      <p>[Toelichting tekst] – <a href="#">[Klik hier]</a></p>
+      <div class="logo-grid">
+        <div class="placeholder">[Logo]</div>
+        <div class="placeholder">[Logo]</div>
+        <div class="placeholder">[Logo]</div>
+        <div class="placeholder">[Logo]</div>
+        <div class="placeholder">[Logo]</div>
+        <div class="placeholder">[Logo]</div>
+        <div class="placeholder">[Logo]</div>
+        <div class="placeholder">[Logo]</div>
+        <div class="placeholder">[Logo]</div>
+        <div class="placeholder">[Logo]</div>
+        <div class="placeholder">[Logo]</div>
+        <div class="placeholder">[Logo]</div>
+      </div>
+      <a href="#">[Bekijk alle tarieven]</a>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- Company overview box -->
+    <div class="overview-box">
+      <h2>[Kop: Over het bedrijf / de aanpak]</h2>
+      <p>[Overview tekst met interne links naar gerelateerde pagina's]</p>
+    </div>
+
+    <!-- Practitioners -->
+    <div class="practitioners">
+      <h2>[Kop: Behandelaars]</h2>
+      <h3>[Subkop: beschikbare specialisten]</h3>
+      <div class="practitioner-grid">
+        <div class="practitioner-card">
+          <div class="placeholder">[Foto]</div>
+          <p class="name">[Naam]</p>
+          <p>[Functie]</p>
+        </div>
+        <div class="practitioner-card">
+          <div class="placeholder">[Foto]</div>
+          <p class="name">[Naam]</p>
+          <p>[Functie]</p>
+        </div>
+        <div class="practitioner-card">
+          <div class="placeholder">[Foto]</div>
+          <p class="name">[Naam]</p>
+          <p>[Functie]</p>
+        </div>
+        <div class="practitioner-card">
+          <div class="placeholder">[Foto]</div>
+          <p class="name">[Naam]</p>
+          <p>[Functie]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="color:#fff;">[Logo]</div>
+          <p>[Missiestatement]</p>
+          <p>KVK: [nummer]</p>
+        </div>
+        <div>
+          <h4>[Pagina's]</h4>
+          <ul>
+            <li>Home</li>
+            <li>Over ons</li>
+            <li>Behandelingen</li>
+            <li>Tarieven</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div>
+          <h4>[Bedrijf]</h4>
+          <ul>
+            <li>Missie</li>
+            <li>Specialiteiten</li>
+            <li>Team</li>
+            <li>FAQ</li>
+          </ul>
+        </div>
+        <div>
+          <h4>[Contact]</h4>
+          <ul>
+            <li>[Telefoonnummer]</li>
+            <li>[WhatsApp]</li>
+            <li>[E-mail]</li>
+            <li>[Openingstijden]</li>
+          </ul>
+          <div class="social-icons">
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+            <div class="placeholder"></div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">© [Jaar] [Bedrijfsnaam] | [Ontwikkeld door]</div>
+    </div>
+  </footer>
+
+</body>
+</html>
