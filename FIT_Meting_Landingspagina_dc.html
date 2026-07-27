@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<script src="./image-slot.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+  <link rel="stylesheet" href="_ds/fit-fysiotherapie-design-system-7d00db14-307b-4de2-bb2f-347630150cc1/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/fit-fysiotherapie-design-system-7d00db14-307b-4de2-bb2f-347630150cc1/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/fit-fysiotherapie-design-system-7d00db14-307b-4de2-bb2f-347630150cc1/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/fit-fysiotherapie-design-system-7d00db14-307b-4de2-bb2f-347630150cc1/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/fit-fysiotherapie-design-system-7d00db14-307b-4de2-bb2f-347630150cc1/tokens/patterns.css">
+  <link rel="stylesheet" href="_ds/fit-fysiotherapie-design-system-7d00db14-307b-4de2-bb2f-347630150cc1/styles.css">
+  <script src="_ds/fit-fysiotherapie-design-system-7d00db14-307b-4de2-bb2f-347630150cc1/_ds_bundle.js"></script>
+  <style>
+    body{margin:0;background:var(--white);font-family:var(--font-sans);color:var(--text-primary)}
+    a{color:var(--neutral-900)}
+    a:hover{color:var(--brand-yellow-700)}
+    [data-screen-label="verzekeraars"] a{display:none !important}
+    [data-screen-label="wat-meten-we"] a > span:last-child{display:none !important}
+  </style>
+</helmet>
+
+<div style="max-width:1180px;margin:0 auto;padding:16px 24px 0" data-screen-label="header">
+  <x-import component-from-global-scope="FITFysiotherapieDesignSystem_7d00db.TrustBar" hint-size="100%,44px" style="border-radius:var(--radius-md);margin-bottom:8px"></x-import>
+</div>
+<div style="max-width:1180px;margin:0 auto;padding:0 24px" data-screen-label="header">
+  <x-import component-from-global-scope="FITFysiotherapieDesignSystem_7d00db.SiteHeader" active-label="FIT Meting" hint-size="100%,72px" items="{{ navItems }}"></x-import>
+</div>
+
+<main style="max-width: 1180px; margin: 0 auto; padding: 28px 24px 0; display: flex; flex-direction: column; gap: 56px; position: relative" data-screen-label="fit-meting-landingspagina">
+
+  <section style="position:relative;border-radius:var(--radius-lg);overflow:hidden;min-height:460px;display:flex;align-items:flex-end" data-screen-label="hero">
+    <div style="position:absolute;inset:0">
+      <image-slot id="hero-photo" shape="rect" placeholder="{{ heroPhotoLabel }}" src="images/hero.jpg"></image-slot>
+    </div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.82) 100%);pointer-events:none"></div>
+    <div style="position:relative;padding:48px 40px;max-width:640px;color:var(--white);display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <span style="font-weight: 700; font-size: 2.5rem; color: var(--brand-yellow-500); width: 238px; height: 46px">FIT Meting</span>
+      </div>
+      <h1 style="margin:0 0 6px;font-size:var(--text-3xl);font-weight:800;line-height:var(--leading-tight)">{{ heroTitle }}</h1>
+      <p style="margin:0 0 10px;font-size:var(--text-md);color:var(--neutral-200)">{{ heroSubtitle }}</p>
+      <ul style="list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:8px">
+        <sc-for list="{{ heroUsps }}" as="usp" hint-placeholder-count="3">
+          <li style="display:flex;align-items:center;gap:8px;font-size:var(--text-sm);color:var(--neutral-100)">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--brand-yellow-500);flex-shrink:0"></span>
+            {{ usp }}
+          </li>
+        </sc-for>
+      </ul>
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+        <x-import component-from-global-scope="FITFysiotherapieDesignSystem_7d00db.Button" variant="primary" size="lg" hint-size="auto,56px">Maak nu een afspraak</x-import>
+        <span style="font-size:var(--text-sm);color:var(--neutral-300)">Op werkdagen binnen 24 uur geholpen</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:720px;margin:0 auto;text-align:center" data-screen-label="merkkapstok">
+    
+  <p style="margin: 0; font-size: 3rem; font-weight: 700; color: var(--text-primary); line-height: var(--leading-normal)">FIT worden, FIT zijn, FIT blijven!</p></section>
+
+  <section style="display:flex;flex-direction:column;gap:18px" data-screen-label="wat-meten-we">
+    <div style="max-width:640px">
+      <span style="display:inline-block;margin-bottom:10px">
+        <x-import component-from-global-scope="FITFysiotherapieDesignSystem_7d00db.Badge" tone="yellow" hint-size="auto,28px">FIT: VALD ForceDecks &amp; ForceFrame</x-import>
+      </span>
+      <h2 style="font-size:var(--text-2xl);font-weight:800;margin:0 0 8px;line-height:var(--leading-tight)">{{ testsHeading }}</h2>
+      <p style="font-size:var(--text-md);color:var(--text-secondary);line-height:var(--leading-normal);margin:0">{{ testsIntro }}</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px">
+      <sc-for list="{{ testCards }}" as="card" hint-placeholder-count="3">
+        <x-import component-from-global-scope="FITFysiotherapieDesignSystem_7d00db.InfoCard" hint-size="100%,180px" title="{{ card.title }}" description="{{ card.description }}" link-label="Hoort dit ook bij mij?"></x-import>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:32px;align-items:center" data-screen-label="hoe-werkt-het">
+    <div style="width:100%;aspect-ratio:4/3">
+      <image-slot id="hoe-werkt-foto" shape="rounded" radius="20" placeholder="Afbeelding van de meting" src="images/hoe-werkt-het.jpg"></image-slot>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h2 style="font-size:var(--text-2xl);font-weight:800;margin:0;line-height:var(--leading-tight)">Zo werkt de FIT Meting</h2>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--neutral-900);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--text-sm)">1</span>
+          <p style="margin:0;color:var(--text-secondary);font-size:var(--text-sm);line-height:var(--leading-normal)">We testen je op dezelfde apparatuur als topsportclubs. Geen gokwerk, gewoon meten.</p>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--neutral-900);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--text-sm)">2</span>
+          <p style="margin:0;color:var(--text-secondary);font-size:var(--text-sm);line-height:var(--leading-normal)">Je krijgt een rapport dat je meteen snapt. Geen medische termen, gewoon uitleg die klopt.</p>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--neutral-900);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--text-sm)">3</span>
+          <p style="margin:0;color:var(--text-secondary);font-size:var(--text-sm);line-height:var(--leading-normal)">Je fysio loopt het met je door en geeft je een concreet plan voor {{ sportLabelLower }}.</p>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--neutral-900);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--text-sm)">4</span>
+          <p style="margin:0;color:var(--text-secondary);font-size:var(--text-sm);line-height:var(--leading-normal)">Test je later nog een keer? Dan zie je zwart op wit of je sterker, explosiever of stabieler bent geworden. Niet alleen hoeveel gewicht je tilt, maar ook wat je lichaam echt aankan.</p>
+        </div>
+      </div>
+      <div>
+        <x-import component-from-global-scope="FITFysiotherapieDesignSystem_7d00db.Button" variant="primary" hint-size="auto,48px">Maak nu een afspraak</x-import>
+      </div>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:18px" data-screen-label="testimonials">
+    <h2 style="font-size:var(--text-2xl);font-weight:800;margin:0;line-height:var(--leading-tight)">Wat sporters zeggen</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px">
+      <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);box-shadow:var(--shadow-card);padding:20px;display:flex;flex-direction:column;gap:12px">
+        <div style="width:52px;height:52px"><image-slot id="testimonial-1" shape="circle" placeholder="Foto" src="images/testimonial-1.jpg"></image-slot></div>
+        <p style="margin:0;font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--leading-normal)">[Open veld: vraag de sporter wat hij of zij terugzag in de resultaten dat nog niet was opgemerkt, en wat dat deed met het vertrouwen voor wedstrijd of training]</p>
+        <span style="font-size:var(--text-xs);font-weight:700;color:var(--text-primary)">[Naam, sport]</span>
+      </div>
+      <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);box-shadow:var(--shadow-card);padding:20px;display:flex;flex-direction:column;gap:12px">
+        <div style="width:52px;height:52px"><image-slot id="testimonial-2" shape="circle" placeholder="Foto" src="images/testimonial-2.jpg"></image-slot></div>
+        <p style="margin:0;font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--leading-normal)">[Open veld: vraag of de sporter later nog eens is getest, en wat het verschil was tussen de metingen]</p>
+        <span style="font-size:var(--text-xs);font-weight:700;color:var(--text-primary)">[Naam, sport]</span>
+      </div>
+      <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);box-shadow:var(--shadow-card);padding:20px;display:flex;flex-direction:column;gap:12px">
+        <div style="width:52px;height:52px"><image-slot id="testimonial-3" shape="circle" placeholder="Foto" src="images/testimonial-3.jpg"></image-slot></div>
+        <p style="margin:0;font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--leading-normal)">[Open veld: vraag wat de meting concreet heeft opgeleverd, buiten de cijfers om]</p>
+        <span style="font-size:var(--text-xs);font-weight:700;color:var(--text-primary)">[Naam, sport]</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:start" data-screen-label="faq">
+    <x-import component-from-global-scope="FITFysiotherapieDesignSystem_7d00db.FAQAccordion" hint-size="100%,400px" heading="Veelgestelde vragen over de FIT Meting" items="{{ faqItems }}"></x-import>
+    <div style="position:sticky;top:24px">
+      <div style="display:flex;align-items:center;gap:14px;background:var(--white);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:16px;box-shadow:var(--shadow-float);max-width:300px">
+        <div style="width:56px;height:56px;flex-shrink:0">
+          <image-slot id="medewerker-foto" shape="circle" placeholder="Foto van medewerker" src="images/medewerker.jpg"></image-slot>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:var(--text-sm);color:var(--text-primary)">Nog vragen?</div>
+          <div style="font-size:var(--text-xs);color:var(--text-secondary);margin:2px 0 6px">Onze therapeuten reageren binnen 24 uur, geen wachttijd van weken.</div>
+          <a href="tel:0850601808" style="display:flex;align-items:center;gap:6px;font-size:var(--text-sm);font-weight:700;color:var(--neutral-900);text-decoration:none">
+            <x-import component-from-global-scope="FITFysiotherapieDesignSystem_7d00db.Icon" name="messageCircle" size="15" color="var(--brand-yellow-600)"></x-import>
+            085 060 18 08
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="position:relative;background:var(--neutral-900);border-radius:var(--radius-lg);overflow:hidden;padding:48px 40px;color:var(--white);text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px" data-screen-label="cta-close">
+    <div style="position: absolute; inset: 0; background-image: var(--pattern-dots-white); background-size: var(--pattern-dots-size); opacity: 0.1; left: -2px; top: 11px"></div>
+    <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;max-width:560px">
+      <h2 style="font-size:var(--text-2xl);font-weight:800;margin:0">{{ ctaHeading }}</h2>
+      <p style="margin:0;color:var(--neutral-300);font-size:var(--text-md)">Op werkdagen binnen 24 uur geholpen.</p>
+      <x-import component-from-global-scope="FITFysiotherapieDesignSystem_7d00db.Button" variant="primary" size="lg" hint-size="auto,56px">Maak nu een afspraak</x-import>
+    </div>
+  </section>
+
+
+
+  
+
+</main>
+
+<div style="max-width:1180px;margin:0 auto;padding:0 24px 40px" data-screen-label="footer">
+  
+</div><div data-screen-label="verzekeraars"><x-import component-from-global-scope="FITFysiotherapieDesignSystem_7d00db.InsurerStrip" hint-size="100%,200px" heading="Aangesloten bij alle zorgverzekeraars van Nederland"></x-import></div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;sport&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;Padel&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;Algemeen&quot;, &quot;Hyrox&quot;, &quot;Padel&quot;, &quot;Hardlopen&quot;, &quot;Krachttraining&quot;], &quot;section&quot;: &quot;FIT Meting&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const sport = this.props.sport || "Algemeen";
+
+    const navItems = [
+      { label: "Samen werken aan een FIT leven.", href: "#" },
+    ];
+
+    const data = {
+      "Algemeen": {
+        label: "sporters",
+        heroTitle: "Hoe sterk is jouw lichaam echt?",
+        heroSubtitle: "De FIT Meting geeft je harde data in plaats van aannames. Zie je eigen voortgang: kracht, explosiviteit en balans, zwart op wit.",
+        heroUsps: ["Objectieve data in plaats van aannames", "Volg je vooruitgang over tijd", "Concreet advies van je fysiotherapeut"],
+        heroPhotoLabel: "Foto: FIT Meting op de ForceDecks",
+        testsHeading: "Wat meet de FIT Meting",
+        testsIntro: "De FIT Meting brengt je kracht, explosiviteit en links-rechts balans in kaart met dezelfde apparatuur die topsportclubs gebruiken.",
+        tests: [
+          { title: "Squat Assessment", description: "We meten of je gelijk belast op links en rechts tijdens het zakken en opstaan uit een squat. Een verschil is met het blote oog vaak onzichtbaar, in de data wel." },
+          { title: "Countermovement Jump (CMJ)", description: "Een sprongtest die je explosieve beenkracht en herstel meet. Spring je 5% lager dan je eigen record? Dan is je lichaam nog niet volledig hersteld." },
+          { title: "IMTP (Isometrische kracht)", description: "Laat zien hoeveel je lichaam nu aankan. Handig om te weten voordat je een zwaar trainingsblok start, ook als je nog niets voelt." },
+        ],
+        faq: [
+          { question: "Is de FIT Meting ook zinvol als ik nog geen blessure heb?", answer: "Zeker. Zonder eerdere meting zie je een asymmetrie pas als het al een blessure is geworden. Mét een eerdere meting weet je het van tevoren, en kun je erop trainen voordat het misgaat." },
+          { question: "Krijg ik één meting, of test ik vaker?", answer: "Je krijgt 3 metingen, verspreid over een periode die bij jou past. Zo zie je niet alleen een momentopname, maar ook je eigen vooruitgang." },
+          { question: "Wat levert de FIT Meting mij concreet op?", answer: "Een helder rapport met je scores, uitleg per test in gewone taal, en persoonlijk advies van je fysiotherapeut over wat je ermee kan." },
+          { question: "Heb ik een verwijzing nodig?", answer: "Nee, je kan zonder verwijzing van je huisarts direct een afspraak maken voor een FIT Meting." },
+          { question: "Wordt de FIT Meting vergoed door mijn zorgverzekeraar?", answer: "Verschilt per polis en aanvullende verzekering. Check je vergoeding gewoon even met ons mee bij het maken van je afspraak, dat zoeken we samen uit." },
+        ],
+        ctaHeading: "Weet hoe je lichaam ervoor staat!",
+      },
+      "Hyrox": {
+        label: "Hyrox-sporters",
+        heroTitle: "Weet of jouw lichaam een Hyrox aankan",
+        heroSubtitle: "Van sled push tot wall balls. De FIT Meting brengt je peesbelastbaarheid, explosiviteit en herstel in kaart, voordat je erachter komt op de wedstrijdvloer.",
+        heroUsps: ["Speciaal voor combinatie hardlopen + kracht", "Peesbelastbaarheid (RSI) en maximale kracht (IMTP) in één rapport", "Concreet advies van je fysiotherapeut"],
+        heroPhotoLabel: "Foto: sled push / Hyrox-training",
+        testsHeading: "Wat meet de FIT Meting voor Hyrox",
+        testsIntro: "De FIT Meting brengt je peesbelastbaarheid, explosiviteit en maximale kracht in kaart — precies de eigenschappen die een Hyrox-race van je vraagt.",
+        tests: [
+          { title: "Drop Jump / RSI", description: "Meet hoe veerkrachtig je pezen werken. Een lage RSI betekent dat je peesveer passief werkt, met verhoogd risico op achillespees- of knieklachten bij hoog volume." },
+          { title: "IMTP (Isometrische kracht)", description: "Directe indicator voor je sled push-capaciteit en sandbag lunge-kracht, de zwaarste onderdelen van een Hyrox-race." },
+          { title: "Countermovement Jump (CMJ)", description: "Herstelcheck vóór zware trainingen. Een daling van meer dan 5% betekent dat je lichaam nog niet klaar is voor maximale belasting." },
+        ],
+        faq: [
+          { question: "Is dit ook zinvol als ik nog nooit geblesseerd ben geweest?", answer: "Juist bij Hyrox loopt asymmetrie door de hoge trainingsfrequentie snel op. Zonder meting zie je dat pas als het al een blessure is. Vroeg meten voorkomt dat het zover komt." },
+          { question: "Krijg ik één meting, of test ik vaker?", answer: "Je krijgt 3 metingen, verspreid over een periode die bij jou past. Zo zie je niet alleen een momentopname, maar ook je eigen vooruitgang." },
+          { question: "Wat levert de FIT Meting mij op als Hyrox-sporter?", answer: "Inzicht in je peesbelastbaarheid (RSI) én je maximale kracht (IMTP), plus concreet advies over waar je trainingslast op af mag stemmen." },
+          { question: "Heb ik een verwijzing nodig?", answer: "Nee, je kan zonder verwijzing van je huisarts direct een afspraak maken." },
+          { question: "Wordt de FIT Meting vergoed door mijn zorgverzekeraar?", answer: "Verschilt per polis en aanvullende verzekering. Check je vergoeding gewoon even met ons mee bij het maken van je afspraak, dat zoeken we samen uit." },
+        ],
+        ctaHeading: "Sta klaar voor je volgende Hyrox-race",
+      },
+      "Padel": {
+        label: "padel-spelers",
+        heroTitle: "Voorkom je volgende padel-blessure",
+        heroSubtitle: "Zie waar je enkels en knieën extra belast worden, voordat je het zelf voelt.",
+        heroUsps: ["Specifiek gericht op enkel- en kniebelasting", "Test voor laterale explosiviteit en richtingswissels", "Concreet advies van je fysiotherapeut"],
+        heroPhotoLabel: "Foto: padel-wedstrijd / training",
+        testsHeading: "Wat meet de FIT Meting voor padel",
+        testsIntro: "De FIT Meting brengt je enkel- en kniebelastbaarheid en laterale explosiviteit in kaart — de eigenschappen die bepalend zijn bij padel.",
+        tests: [
+          { title: "Hop & Return (zijwaarts)", description: "De meest sportspecifieke test voor padel: bootst je zijwaartse verplaatsing na en brengt je laterale explosiviteit in kaart." },
+          { title: "Land & Hold", description: "Meet hoe snel je stabiliseert na een landing op één been, de primaire screeningtest voor enkelblessures bij padel." },
+          { title: "Squat Assessment", description: "Diepe kniediepte bij lunges en muurballen vraagt om een goede belastingsverdeling. We monitoren dit bij knieklachten." },
+        ],
+        faq: [
+          { question: "Is dit ook zinvol als ik nog nooit geblesseerd ben geweest?", answer: "Zeker. De kleinere baan bij padel zorgt voor een hogere belastingsfrequentie dan tennis, waardoor asymmetrie sneller ontstaat. Zonder meting merk je dat vaak pas als het al een blessure is. Vroeg signaleren helpt." },
+          { question: "Krijg ik één meting, of test ik vaker?", answer: "Je krijgt 3 metingen, verspreid over een periode die bij jou past. Zo zie je niet alleen een momentopname, maar ook je eigen vooruitgang." },
+          { question: "Wat levert de FIT Meting mij op als padel-speler?", answer: "Inzicht in je enkel- en kniebelastbaarheid en je laterale explosiviteit, met concreet advies om blessures voor te blijven." },
+          { question: "Heb ik een verwijzing nodig?", answer: "Nee, je kan zonder verwijzing van je huisarts direct een afspraak maken." },
+          { question: "Wordt de FIT Meting vergoed door mijn zorgverzekeraar?", answer: "Verschilt per polis en aanvullende verzekering. Check je vergoeding gewoon even met ons mee bij het maken van je afspraak, dat zoeken we samen uit." },
+        ],
+        ctaHeading: "Blijf blessurevrij padellen",
+      },
+      "Hardlopen": {
+        label: "hardlopers",
+        heroTitle: "Loop verder, zonder blessures",
+        heroSubtitle: "De FIT Meting brengt je peesbelastbaarheid en loopeconomie in kaart. Met dezelfde apparatuur als topsportclubs.",
+        heroUsps: ["Run-specifieke KPI's per gewricht", "Inzicht in peesbelastbaarheid en loopeconomie", "Concreet advies van je fysiotherapeut"],
+        heroPhotoLabel: "Foto: hardloper in actie",
+        testsHeading: "Wat meet de FIT Meting voor hardlopers",
+        testsIntro: "De FIT Meting brengt je peesbelastbaarheid en loopeconomie per gewricht in kaart — de basis voor blessurevrij hardlopen.",
+        tests: [
+          { title: "Drop Jump / RSI", description: "De meest sportspecifieke test voor hardlopers: meet je peesbelastbaarheid en loopeconomie. Een lage RSI betekent verhoogd risico op achillespeesklachten." },
+          { title: "Isometrische test (heup/knie/enkel)", description: "We meten heup, knie en enkel apart. Een blessure kan in elk gewricht ontstaan, dit geeft per gewricht je progressieniveau, ook als je nog niets voelt." },
+          { title: "IMTP (Isometrische kracht)", description: "Je totale lichaamskracht als directe indicator voor hoeveel trainingsbelasting je op dit moment aankan." },
+        ],
+        faq: [
+          { question: "Is dit ook zinvol als ik nog nooit geblesseerd ben geweest?", answer: "Chronische overbelasting is vaak al zichtbaar in rust, voordat je er iets van voelt tijdens het lopen. Zonder meting zie je dat pas als het een blessure is geworden. Vroeg meten voorkomt uitval." },
+          { question: "Krijg ik één meting, of test ik vaker?", answer: "Je krijgt 3 metingen, verspreid over een periode die bij jou past. Zo zie je niet alleen een momentopname, maar ook je eigen vooruitgang." },
+          { question: "Wat levert de FIT Meting mij op als hardloper?", answer: "Inzicht in je peesbelastbaarheid en loopeconomie per gewricht, met concreet advies om je loopvolume veilig op te bouwen." },
+          { question: "Heb ik een verwijzing nodig?", answer: "Nee, je kan zonder verwijzing van je huisarts direct een afspraak maken." },
+          { question: "Wordt de FIT Meting vergoed door mijn zorgverzekeraar?", answer: "Verschilt per polis en aanvullende verzekering. Check je vergoeding gewoon even met ons mee bij het maken van je afspraak, dat zoeken we samen uit." },
+        ],
+        ctaHeading: "Loop blessurevrije kilometers",
+      },
+      "Krachttraining": {
+        label: "krachtsporters",
+        heroTitle: "Til met vertrouwen",
+        heroSubtitle: "Ontdek je maximale kracht en de balans tussen links en rechts. Met dezelfde apparatuur als topsportclubs.",
+        heroUsps: ["Test die je squatbeweging direct repliceert", "Maximale kracht én neuromusculair herstel in beeld", "Concreet advies van je fysiotherapeut"],
+        heroPhotoLabel: "Foto: krachttraining / squat",
+        testsHeading: "Wat meet de FIT Meting voor krachttraining",
+        testsIntro: "De FIT Meting brengt je maximale kracht en de balans tussen links en rechts in kaart, tijdens bewegingen die je trainingsbelasting direct repliceren.",
+        tests: [
+          { title: "Squat Assessment", description: "Repliceert direct je trainingsbewegingspatroon. Een ongelijke bijdrage van links en rechts is met het blote oog onzichtbaar, in de data wel." },
+          { title: "IMTP (Isometrische kracht)", description: "De gouden standaard voor je totale lichaamskracht. Een daling van meer dan 5% t.o.v. je baseline betekent: nog niet hersteld van je vorige training." },
+          { title: "Countermovement Jump (CMJ)", description: "Meet je neuromusculaire herstel. Daalt je CMJ zonder dat je IMTP daalt? Dan is je explosiviteit tijdelijk lager, maar je maximale kracht niet." },
+        ],
+        faq: [
+          { question: "Is dit ook zinvol als ik nog nooit geblesseerd ben geweest?", answer: "Een groot verschil tussen links en rechts is vaak een onbewust compensatiepatroon. Dat zie je pas in de data, niet met het blote oog, en dus ook niet voordat het een blessure wordt." },
+          { question: "Krijg ik één meting, of test ik vaker?", answer: "Je krijgt 3 metingen, verspreid over een periode die bij jou past. Zo zie je niet alleen een momentopname, maar ook je eigen vooruitgang." },
+          { question: "Wat levert de FIT Meting mij op als krachtsporter?", answer: "Inzicht in je maximale kracht, je links-rechts balans tijdens de squat, en concreet advies over trainingsopbouw en herstel." },
+          { question: "Heb ik een verwijzing nodig?", answer: "Nee, je kan zonder verwijzing van je huisarts direct een afspraak maken." },
+          { question: "Wordt de FIT Meting vergoed door mijn zorgverzekeraar?", answer: "Verschilt per polis en aanvullende verzekering. Check je vergoeding gewoon even met ons mee bij het maken van je afspraak, dat zoeken we samen uit." },
+        ],
+        ctaHeading: "Breng je kracht in kaart",
+      },
+    };
+
+    const d = data[sport] || data["Algemeen"];
+
+    return {
+      navItems,
+      sportLabelLower: d.label,
+      heroTitle: d.heroTitle,
+      heroSubtitle: d.heroSubtitle,
+      heroUsps: d.heroUsps,
+      heroPhotoLabel: d.heroPhotoLabel,
+      testsHeading: d.testsHeading,
+      testsIntro: d.testsIntro,
+      testCards: d.tests,
+      faqItems: d.faq,
+      ctaHeading: d.ctaHeading,
+    };
+  }
+}
+
+</script>
+</body>
+</html>
