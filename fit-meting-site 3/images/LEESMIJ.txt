@@ -1,0 +1,12 @@
+Zet hier je eigen foto's neer met precies deze bestandsnamen,
+dan verschijnen ze automatisch op de pagina:
+
+hero.jpg              -> grote hero-foto bovenaan
+hoe-werkt-het.jpg      -> foto bij "Zo werkt de FIT Meting"
+testimonial-1.jpg      -> ronde profielfoto testimonial 1
+testimonial-2.jpg      -> ronde profielfoto testimonial 2
+testimonial-3.jpg      -> ronde profielfoto testimonial 3
+
+Andere bestandsnaam of formaat (png/webp) gebruiken? Pas dan
+ook het src="images/..." attribuut aan bij het bijbehorende
+<image-slot> element in de HTML.
