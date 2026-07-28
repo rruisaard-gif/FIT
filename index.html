@@ -32,6 +32,26 @@
   <x-import component-from-global-scope="FITFysiotherapieDesignSystem_7d00db.SiteHeader" active-label="FIT Meting" hint-size="100%,72px" items="{{ navItems }}"></x-import>
 </div>
 
+<div style="max-width:1180px;margin:8px auto 0;padding:0 24px;display:flex;gap:8px;flex-wrap:wrap" data-screen-label="sport-switcher">
+  <a href="?sport=Algemeen" data-sport="Algemeen" style="padding:6px 16px;border-radius:999px;border:1px solid var(--border-subtle);color:var(--text-primary);text-decoration:none;font-size:var(--text-sm);font-weight:600">Algemeen</a>
+  <a href="?sport=Hyrox" data-sport="Hyrox" style="padding:6px 16px;border-radius:999px;border:1px solid var(--border-subtle);color:var(--text-primary);text-decoration:none;font-size:var(--text-sm);font-weight:600">Hyrox</a>
+  <a href="?sport=Padel" data-sport="Padel" style="padding:6px 16px;border-radius:999px;border:1px solid var(--border-subtle);color:var(--text-primary);text-decoration:none;font-size:var(--text-sm);font-weight:600">Padel</a>
+  <a href="?sport=Hardlopen" data-sport="Hardlopen" style="padding:6px 16px;border-radius:999px;border:1px solid var(--border-subtle);color:var(--text-primary);text-decoration:none;font-size:var(--text-sm);font-weight:600">Hardlopen</a>
+  <a href="?sport=Krachttraining" data-sport="Krachttraining" style="padding:6px 16px;border-radius:999px;border:1px solid var(--border-subtle);color:var(--text-primary);text-decoration:none;font-size:var(--text-sm);font-weight:600">Krachttraining</a>
+</div>
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var current = params.get('sport') || 'Algemeen';
+  document.querySelectorAll('[data-screen-label="sport-switcher"] a').forEach(function(a){
+    if (a.getAttribute('data-sport') === current) {
+      a.style.background = 'var(--brand-yellow-500)';
+      a.style.borderColor = 'var(--brand-yellow-500)';
+    }
+  });
+})();
+</script>
+
 <main style="max-width: 1180px; margin: 0 auto; padding: 28px 24px 0; display: flex; flex-direction: column; gap: 56px; position: relative" data-screen-label="fit-meting-landingspagina">
 
   <section style="position:relative;border-radius:var(--radius-lg);overflow:hidden;min-height:460px;display:flex;align-items:flex-end" data-screen-label="hero">
@@ -172,7 +192,8 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;sport&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;Padel&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;Algemeen&quot;, &quot;Hyrox&quot;, &quot;Padel&quot;, &quot;Hardlopen&quot;, &quot;Krachttraining&quot;], &quot;section&quot;: &quot;FIT Meting&quot;}}">
 class Component extends DCLogic {
   renderVals() {
-    const sport = this.props.sport || "Algemeen";
+    const params = new URLSearchParams(window.location.search);
+    const sport = params.get("sport") || this.props.sport || "Algemeen";
 
     const navItems = [
       { label: "Samen werken aan een FIT leven.", href: "#" },
